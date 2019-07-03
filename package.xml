@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+	<name>pose_to_udp</name>
+	<version>1.0.0</version>
+	<description>ROS package that sends 6 DoF poses to a UDP connection from a ROS sensor_msgs/PoseStamped</description>
+	<author email="carloscosta.cmcc@gmail.com">Carlos Miguel Correia da Costa</author>
+	<maintainer email="carloscosta.cmcc@gmail.com">Carlos Miguel Correia da Costa</maintainer>
+	<license>BSD</license>
+
+	<buildtool_depend>catkin</buildtool_depend>
+
+	<depend>geometry_msgs</depend>
+	<depend>rosconsole</depend>
+	<depend>roscpp</depend>
+	<depend>rostime</depend>
+	<depend>tf2</depend>
+	<depend>tf2_geometry_msgs</depend>
+	<depend>tf2_ros</depend>
+</package>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+	<arg name="pose_topic" default="/pca_tracking/localization_pose" />
+	<arg name="udp_group_address" default="" /> <!-- empty will use localhost, otherwise specify udpo group -> example: 192.168.1.1 -->
+	<arg name="udp_port" default="1337" />
+	<arg name="send_6dof_pose_in_udp_message" default="false" /> <!-- if false, 3 DoF poses will be sent -->
+	<arg name="send_quaternion_in_udp_message" default="false" /> <!-- if false, [Yaw|Pitch|Roll] will be sent -->
+	<arg name="udp_pose_coordinate_system" default="conveyor" />
+	<arg name="tf_lookup_timeout" default="0.2" />
+	<arg name="show_in_console_the_udp_message_data" default="true" />
+
+	<node pkg="pose_to_udp" type="pose_to_udp_node" name="$(anon pose_to_udp)" clear_params="true" output="screen">
+		<param name="pose_topic" type="str" value="$(arg pose_topic)" />
+		<param name="udp_group_address" type="str" value="$(arg udp_group_address)" />
+		<param name="udp_port" type="int" value="$(arg udp_port)" />
+		<param name="send_6dof_pose_in_udp_message" type="bool" value="$(arg send_6dof_pose_in_udp_message)" />
+		<param name="send_quaternion_in_udp_message" type="bool" value="$(arg send_quaternion_in_udp_message)" />
+		<param name="udp_pose_coordinate_system" type="str" value="$(arg udp_pose_coordinate_system)" />
+		<param name="tf_lookup_timeout" type="double" value="$(arg tf_lookup_timeout)" />
+		<param name="show_in_console_the_udp_message_data" type="bool" value="$(arg show_in_console_the_udp_message_data)" />
+	</node>
+
+</launch>
